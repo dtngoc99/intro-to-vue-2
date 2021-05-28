@@ -1,30 +1,14 @@
 <template>
-  <div class="event-card -shadow">
-    <span class="eyebrow">{{ event.time }} on {{ event.date }}</span>
-    <h4 class="title">{{ event.title }}</h4>
-    <h5>Organized by {{ event.organizer }}</h5>
-    <h5>Category: {{ event.category }}</h5>
-    <BaseIcon name="map"
-      ><b>Location</b>
-      <address>{{ event.location }}</address>
-    </BaseIcon>
-
-    <h2>
-      Attendees
-      <span class="badge -fill-gradient">{{
-        event.attendees ? event.attendees.length : 0
-      }}</span>
-    </h2>
-    <ul class="list-group">
-      <li
-        v-for="(attendee, index) in event.attendees"
-        :key="index"
-        class="list-item"
-      >
-        <b>{{ attendee.name }}</b>
-      </li>
-    </ul>
-  </div>
+  <router-link
+    class="event-link"
+    :to="{ name: 'event-show', params: { id: event.id } }"
+  >
+    <div class="event-card -shadow">
+      <span class="eyebrow">{{ event.time }} on {{ event.date }}</span>
+      <h4 class="title">{{ event.title }}</h4>
+      <BaseIcon name="users">{{ event.attendees.length }} attending </BaseIcon>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -74,5 +58,13 @@ export default {
 .list-group > .list-item {
   padding: 1em 0;
   border-bottom: solid 1px #e5e5e5;
+}
+.event-card > .title {
+  margin: 0;
+}
+.event-link {
+  color: black;
+  text-decoration: none;
+  font-weight: 100;
 }
 </style>

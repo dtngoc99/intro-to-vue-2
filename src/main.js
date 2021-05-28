@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import BaseIcon from '@/components/BaseIcon.vue'
+import 'nprogress'
 
 Vue.component('BaseIcon', BaseIcon)
 Vue.config.productionTip = false
