@@ -1,12 +1,4 @@
 module.exports = {
-    singleQuote: true,//convert double quotes to single quotes
-    semi: false,//semicolons are not automatically inserted.
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-    
-  }
-  
+    singleQuote: true,
+    semi: false
+}

@@ -1,141 +1,19 @@
 {
-  "events": [
+  "posts": [
     {
       "id": 1,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "organizer": "Ngoc",
-      "title": "Pet Adoption Day",
-      "date": "Dec 2 2018",
-      "time": "12:00",
-      "location": "132 N Magnolia Street, Orlando, Florida",
-      "description": "Help animals find new homes.",
-      "category": "animal welfare",
-      "attendees": [
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "organizer": "Nhat",
-      "title": "Pet Adoption Day",
-      "date": "Dec 2 2018",
-      "time": "12:00",
-      "location": "132 N Magnolia Street, Orlando, Florida",
-      "description": "Help animals find new homes.",
-      "category": "animal welfare",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Adam Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        },
-        {
-          "id": "jkl101",
-          "name": "Mary Gordon"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "category": "education",
-      "organizer": "Nhan",
-      "title": "me",
-      "description": "me",
-      "location": "me",
-      "date": "2021-05-26T03:13:00.000Z",
-      "time": "22:00",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Adam Jahr"
-        },
-        {
-          "id": "ghi789",
-          "name": "Beth Swanson"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "category": "nature",
-      "organizer": "TyNgoc",
-      "title": "Vuex is the best",
-      "description": "a",
-      "location": "f",
-      "date": "2021-05-26T03:41:00.000Z",
-      "time": "23:00",
-      "attendees": [
-        {
-          "id": "abc123",
-          "name": "Adam Jahr"
-        }
-      ]
-    },
-    {
-      "id": 9904643,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "category": "animal welfare",
-      "organizer": "Ty",
-      "title": "Hi, there",
-      "description": "No description",
-      "location": "Vietnam",
-      "date": "2021-05-28T07:34:00.000Z",
-      "time": "22:00",
-      "attendees": []
-    },
-    {
-      "id": 4172956,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "category": "housing",
-      "organizer": "Nhat Tan",
-      "title": "I am here for you",
-      "description": "I love you",
-      "location": "Vietnam",
-      "date": "2021-06-01T11:02:00.000Z",
-      "time": "18:00",
-      "attendees": []
-    },
-    {
-      "id": 5247296,
-      "user": {
-        "id": "abc123",
-        "name": "Ngoc"
-      },
-      "category": "education",
-      "organizer": "Ngoc Ty",
-      "title": "This is a big problem",
-      "description": "I can not know but I can do it",
-      "location": "Thu Duc district",
-      "date": "2021-06-01T11:40:00.000Z",
-      "time": "18:00",
-      "attendees": []
+      "title": "json-server",
+      "author": "typicode"
     }
-  ]
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

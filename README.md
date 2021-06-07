@@ -1,4 +1,4 @@
-# intro-vue
+# token-based-authetication
 
 ## Project setup
 ```

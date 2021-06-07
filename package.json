@@ -1,5 +1,5 @@
 {
-  "name": "intro-vue",
+  "name": "token-based-authetication",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,10 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "feather-icons": "^4.28.0",
-    "node-sass": "^6.0.0",
-    "nprogress": "^0.2.0",
-    "sass-loader": "^11.1.1",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "vuejs-datepicker": "^1.6.2",
-    "vuelidate": "^0.7.6",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -31,7 +27,9 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^6.0.0",
     "prettier": "^2.2.1",
+    "sass-loader": "^12.0.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
