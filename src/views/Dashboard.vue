@@ -1,29 +1,93 @@
 <template>
-  <div>
+  <v-container>
     <h1>Dashboard</h1>
-    <template v-if="!isLoading">
-      <EventCard v-for="event in events" :key="event.id" :event="event" />
-    </template>
-    <p v-else>Loading events</p>
-  </div>
+
+    <v-row>
+      <v-col v-for="sale in sales" :key="`${sale.title}`" cols="12" md="4">
+        <SalesGraph :sale="sale" />
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col
+        v-for="statistic in statistics"
+        :key="`${statistic.title}`"
+        md="6"
+        lg="3"
+      >
+        <StatisticCard :statistic="statistic" />
+      </v-col>
+    </v-row>
+
+
+    <v-row id="below-the-fold" v-intersect="showMoreContent">
+      <v-col cols="12" md="8">
+        <EmployeesTable :employees="employees" @select-employee="setEmployee" />
+      </v-col>
+      <v-col cols="12" md="4">
+        <EventTimeline :timeline="timeline" />
+      </v-col>
+    </v-row>
+    <v-row v-if="loadNewContent" id="more-content">
+      <v-col>
+        <v-skeleton-loader
+          ref="skeleton"
+          type="table"
+          class="mx-auto"
+        ></v-skeleton-loader>
+      </v-col>
+    </v-row>
+    <v-snackbar v-model="snackbar">
+      You have selected {{ selectedEmployee.name }},
+      {{ selectedEmployee.title }}
+      <v-btn color="pink" text @click="snackbar = false"> Close </v-btn>
+    </v-snackbar>
+  </v-container>
 </template>
 
 <script>
-import axios from 'axios'
-import EventCard from '../components/EventCard'
+import EmployeesTable from "../components/EmployeesTable";
+import EventTimeline from "../components/EventTimeline";
+import SalesGraph from "../components/SalesGraph";
+import StatisticCard from "../components/StatisticCard";
+
+import employeesData from "../data/employees.json";
+import timelineData from "../data/timeline.json";
+import salesData from "../data/sales.json";
+import statisticsData from "../data/statistics.json";
 export default {
-  components: { EventCard },
+  name: "DashboardPage",
+  components: {
+    EmployeesTable,
+    EventTimeline,
+    SalesGraph,
+    StatisticCard,
+  },
   data() {
     return {
-      isLoading: true,
-      events: [],
-    }
+      employees: employeesData,
+      loadNewContent: false,
+      sales: salesData,
+      selectedEmployee: {
+        name: "",
+        title: "",
+      },
+      snackbar: false,
+      statistics: statisticsData,
+      timeline: timelineData,
+    };
   },
-  created() {
-    axios.get('//localhost:3000/dashboard').then(({ data }) => {
-      this.events = data.events.events
-      this.isLoading = false
-    })
+  methods: {
+    setEmployee(event) {
+      this.snackbar = true;
+      this.selectedEmployee.name = event.name;
+      this.selectedEmployee.title = event.title;
+    },
+    showMoreContent(entries) {
+      this.loadNewContent = entries[0].isIntersecting;
+    },
   },
-}
+};
 </script>
+
+<style lang="scss" scoped></style>

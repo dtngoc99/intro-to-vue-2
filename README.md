@@ -1,4 +1,4 @@
-# token-based-authetication
+# beautify-with-vuetify
 
 ## Project setup
 ```

@@ -1,18 +1,15 @@
 <template>
-  <div v-if="!loggedIn">
-    To use this app you'll need to
-    <router-link to="/login"> Login </router-link>
-    or
-    <router-link to="/register"> Register </router-link>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png">
   </div>
 </template>
 
 <script>
-import { authComputed } from '../vuex/helpers.js'
+// @ is an alias to /src
 
 export default {
-  computed: {
-    ...authComputed,
-  },
+  name: 'Home',
+  components: {
+  }
 }
 </script>
